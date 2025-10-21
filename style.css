@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5e1ce;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fundo animado */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.leaf {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #009929;
+  border-radius: 50% 0 50% 0;
+  opacity: 0.3;
+  animation: fall 10s infinite linear;
+}
+
+.leaf1 { left: 10%; animation-delay: 0s; }
+.leaf2 { left: 30%; animation-delay: 2s; width: 20px; height: 20px; }
+.leaf3 { left: 55%; animation-delay: 4s; }
+.leaf4 { left: 70%; animation-delay: 1s; width: 35px; height: 35px; }
+.leaf5 { left: 90%; animation-delay: 3s; }
+
+@keyframes fall {
+  0% { top: -10%; transform: rotate(0deg) translateX(0); opacity: 0.4; }
+  50% { transform: rotate(180deg) translateX(40px); opacity: 0.7; }
+  100% { top: 110%; transform: rotate(360deg) translateX(-40px); opacity: 0; }
+}
+
+/* Caixa de formulário */
+.login-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  position: relative;
+  background-color: rgba(0, 153, 41, 0.95);
+  padding: 45px 55px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 100, 20, 0.4);
+  text-align: center;
+  width: 380px;
+  overflow: hidden;
+  animation: floatForm 4s ease-in-out infinite;
+}
+
+.glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 255, 100, 0.15), transparent 70%);
+  animation: glowMove 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes floatForm {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes glowMove {
+  0% { transform: translate(0, 0); opacity: 0.6; }
+  50% { transform: translate(15px, 15px); opacity: 1; }
+  100% { transform: translate(0, 0); opacity: 0.6; }
+}
+
+/* Elementos visuais */
+.logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
+  animation: pulse 3s infinite ease-in-out;
+  z-index: 1;
+  position: relative;
+}
+
+h1 {
+  color: #f5e1ce;
+  margin-bottom: 25px;
+  font-size: 26px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 18px;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+label {
+  color: #f5e1ce;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  background-color: #f5e1ce;
+  color: #004f10;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #009929;
+  opacity: 0.8;
+}
+
+/* Botão */
+.btn {
+  width: 100%;
+  background-color: #006414;
+  color: #f5e1ce;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  position: relative;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #004f10;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00ff73;
+}
+
+/* Link */
+.link {
+  margin-top: 18px;
+  color: #f5e1ce;
+  font-size: 14px;
+  z-index: 1;
+  position: relative;
+}
+
+.link a {
+  color: #f5e1ce;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
